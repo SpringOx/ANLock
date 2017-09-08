@@ -20,7 +20,7 @@
     int _readWriteFlag;
 }
 
-@property (atomic, assign) int atomicFlag;
+@property (atomic, assign) NSUInteger atomicFlag;
 
 @end
 
@@ -194,7 +194,7 @@
     //Atomic Flag
     timeBefore = CFAbsoluteTimeGetCurrent();
     for(i=0; i<count; i++){
-        self.atomicFlag = 1;
+        self.atomicFlag = count;
     }
     timeCurrent = CFAbsoluteTimeGetCurrent();
     printf("Atomic Set/Get used : %f\n", timeCurrent-timeBefore);
